@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats de recherche</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+</head><!--
+<body>
+    <div class="container">
+        <h1>Résultats de recherche</h1>
+        <h2>Top 3 Quartiers Recommandés</h2>
+<ul>
+    {% for i in range(3) %}
+    {% endfor %}
+</ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Quartier</th>
+                    <th>Score total</th>
+                    <th>Score café ({{ cafe_weight }})</th>
+                    <th>Score accès véhicules ({{ car_weight }})</th>
+                    <th>Score niveau de calme ({{ quiet_weight }})</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for quartier, scores in recommendations %}
+                <tr>
+                    <td>{{ quartier }}</td>
+                    <td>{{ scores[0] }}</td>
+                    <td>{{ scores[1] }}</td>
+                    <td>{{ scores[2] }}</td>
+                    <td>{{ scores[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>-->
+<body>
+
+        <h1>Résultat de la recommandation de quartiers</h1>
+        <p>Voici les 3 meilleurs quartiers recommandés :</p>
+        <div class="grid">
+        {% for quartier, scores in recommendations[:3] %}
+        <article class="card">
+            <div class="thumb">  <img src="{{ url_for('static', filename='images/' + quartiers_images[quartier]) }}" alt="{{ quartier }}" ></div>
+            <div class="infos">
+              <h2 class="title">{{ quartier }}<span class="flag"></span></h2>
+              <h3 class="superficie"><span class="bold">Superficie (km2):</span> {{ démo[quartier][1] }}  </h3>
+              <h3 class="seats"><span class="bold">Revenu moyen:</span> 90 000$</h3>
+              <h3 class="seats"><span class="bold">Prix moyen par pièces:</span> {{ price_piece[quartier] }}</h3>
+              <h3 class="seats"><span class="bold">Nombre d'habitants:</span> {{ démo[quartier][0] }}</h3>
+              <h3 class="seats"><span class="bold">Âge moyen:</span> 38 ans</h3>
+          
+              <p class="txt">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, sequi. Quam ratione animi delectus expedita obcaecati debitis at consectetur nemo, praesentium molestiae cum consequuntur, repellat adipisci incidunt, vitae officiis assumenda.
+              </p>
+              <a href="{{ url_for('quartier', quartier=quartier) }}"> <h3 class="details">event details</h3></a>
+            </div>
+          </article>
+          <!--<div class="flex">
+            <a href="{{ url_for('quartier', quartier=quartier) }}">
+            <h2>{{ quartier }}</h2>
+              <img src="{{ url_for('static', filename='images/' + quartiers_images[quartier]) }}" alt="{{ quartier }}" >
+              <p>Score total: {{ scores[0] }}</p>
+            </a>
+          </div>-->
+
+    {% endfor %}
+</div>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+,Centre,Addresse,Quartier,Lat,Lon,NOM
+0,Auditorium (C-5) du cégep de Saint-Laurent,"635, avenue Sainte-Croix, Montréal",Saint-Laurent,45.5119553184466,-73.67286650873787,Saint-Laurent
+1,Bain Saint-Michel,"5300, rue Saint-Dominique, Montréal",Le Plateau-Mont-Royal,45.5251492,-73.5954746,Le Plateau-Mont-Royal
+2,Benny Fab,"6400, avenue de Monkland, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4663823,-73.6309558,Côte-des-Neiges-Notre-Dame-de-Grâce
+3,Bibliothèque Belleville,"10400, avenue de Belleville, Montréal",Montréal-Nord,45.581939399999996,-73.64229353880937,Montréal-Nord
+4,Bibliothèque Benny,"6400, avenue de Monkland, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4663823,-73.6309558,Côte-des-Neiges-Notre-Dame-de-Grâce
+5,Bibliothèque d'Ahuntsic,"10300, rue Lajeunesse, Montréal",Ahuntsic-Cartierville,45.553483,-73.6626049,Ahuntsic-Cartierville
+6,Bibliothèque de Cartierville,"5900, rue de Salaberry, Montréal",Ahuntsic-Cartierville,45.5272448,-73.7128614,Ahuntsic-Cartierville
+7,Bibliothèque de Côte-des-Neiges,"5290, chemin de la Côte-des-Neiges, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4959208,-73.62230323536173,Côte-des-Neiges-Notre-Dame-de-Grâce
+8,Bibliothèque de L'Île-Bizard,"500, montée de l'Église, Montréal",L'Île-Bizard–Sainte-Geneviève,45.4886567,-73.8823134,L'Île-Bizard-Sainte-Geneviève
+9,Bibliothèque de L'Île-des-Sœurs,"260, rue Elgar, Montréal",Verdun,45.4572081,-73.5468802,Verdun
+10,Bibliothèque de La Petite-Patrie,"6707, avenue De Lorimier, Montréal",Rosemont–La Petite-Patrie,45.5474061,-73.5982926,Rosemont-La Petite-Patrie
+11,Bibliothèque de Notre-Dame-de-Grâce,"3755, rue Botrel, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4755031,-73.6143992,Côte-des-Neiges-Notre-Dame-de-Grâce
+12,Bibliothèque de Parc-Extension,"421, rue Saint-Roch, Montréal",Villeray–Saint-Michel–Parc-Extension,45.5314163,-73.6289844,Villeray-Saint-Michel-Parc-Extension
+13,Bibliothèque de Pierrefonds,"13555, boulevard de Pierrefonds, Montréal",Pierrefonds-Roxboro,45.4960289,-73.8475197,Pierrefonds-Roxboro
+14,Bibliothèque de Pointe-aux-Trembles,"14001, rue Notre-Dame Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.5858544,-73.5078805,Mercier-Hochelaga-Maisonneuve
+15,Bibliothèque de Rivière-des-Prairies,"9001, boulevard Perras, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.6499172,-73.5790735,Rivière-des-Prairies-Pointe-aux-Trembles
+16,Bibliothèque de Rosemont,"3131, boul. Rosemont, Montréal",Rosemont–La Petite-Patrie,45.5519484,-73.58222239936559,Rosemont-La Petite-Patrie
+17,Bibliothèque de Saint-Léonard,"8420, boulevard Lacordaire, Montréal",Saint-Léonard,45.5866552,-73.5977342,Saint-Léonard
+18,Bibliothèque de Saint-Michel,"7601, rue François-Perrault, Montréal",Villeray–Saint-Michel–Parc-Extension,45.5621974,-73.6020202,Villeray-Saint-Michel-Parc-Extension
+19,Bibliothèque de Saint-Pierre,"183, rue des Érables, Montréal",Lachine,45.4457062,-73.6513223,Lachine
+20,Bibliothèque de Salaberry,"4170, rue De Salaberry, Montréal",Ahuntsic-Cartierville,45.5346141,-73.7038342,Ahuntsic-Cartierville
+21,Bibliothèque du Boisé,"2727, boulevard Thimens, Montréal",Saint-Laurent,45.5044581,-73.7048768,Saint-Laurent
+22,Bibliothèque du Haut-Anjou,"7070, rue Jarry Est, Montréal",Anjou,45.6011728,-73.5756429,Anjou
+23,Bibliothèque du Plateau-Mont-Royal,"465, avenue du Mont-Royal Est, Montréal",Le Plateau-Mont-Royal,45.5248812,-73.5824623,Le Plateau-Mont-Royal
+24,Bibliothèque du Vieux-Saint-Laurent,"1380, rue de l'Église, Montréal",Saint-Laurent,45.5126182,-73.6765411,Saint-Laurent
+25,Bibliothèque Frontenac,"2550, rue Ontario Est, Montréal",Ville-Marie,45.5329177,-73.5517134,Ville-Marie
+26,Bibliothèque Henri-Bourassa,"5400, boulevard Henri-Bourassa Est, Montréal",Montréal-Nord,45.604629149999994,-73.62501744448745,Montréal-Nord
+27,Bibliothèque Hochelaga,"1870, rue Davidson, Montréal",Mercier–Hochelaga-Maisonneuve,45.5424316,-73.545177,Mercier-Hochelaga-Maisonneuve
+28,Bibliothèque interculturelle,"6767, chemin de la Côte-des-Neiges, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.5032164,-73.636872,Côte-des-Neiges-Notre-Dame-de-Grâce
+29,Bibliothèque Jacqueline-De Repentigny,"5955, avenue Bannantyne, Montréal",Verdun,,,
+30,Bibliothèque Jean-Corbeil,"7500, avenue Goncourt, Montréal",Anjou,45.6030237,-73.5587928,Anjou
+31,Bibliothèque Julio-Jean-Pierre (MCC),"12002, boulevard Rolland, Montréal",Montréal-Nord,45.616093,-73.6206211,Montréal-Nord
+32,Bibliothèque L'Octogone,"2101, avenue Dollard, Montréal",LaSalle,45.4311208,-73.6351539,LaSalle
+33,Bibliothèque Langelier,"6473, rue Sherbrooke Est, Montréal",Mercier–Hochelaga-Maisonneuve,45.5816816,-73.544147,Mercier-Hochelaga-Maisonneuve
+34,Bibliothèque Le Prévost,"7355, avenue Christophe-Colomb, Montréal",Villeray–Saint-Michel–Parc-Extension,45.54402605,-73.61432646549338,Villeray-Saint-Michel-Parc-Extension
+35,Bibliothèque Maisonneuve,"4115, rue Ontario Est, 4e étage, Montréal",Mercier–Hochelaga-Maisonneuve,,,
+36,Bibliothèque Marc-Favreau,"500, boulevard Rosemont, Montréal",Rosemont–La Petite-Patrie,45.531842100000006,-73.59720843146448,Rosemont-La Petite-Patrie
+37,Bibliothèque Marie-Uguay,"6052, boulevard Monk, Montréal",Le Sud-Ouest,45.4576905,-73.5954481,Le Sud-Ouest
+38,Bibliothèque Mercier,"8105, rue Hochelaga, Montréal",Mercier–Hochelaga-Maisonneuve,45.5955039,-73.5236768,Mercier-Hochelaga-Maisonneuve
+39,Bibliothèque Mordecai-Richler,"5434, avenue du Parc, Montréal",Le Plateau-Mont-Royal,45.521629000000004,-73.60174084263804,Le Plateau-Mont-Royal
+40,Bibliothèque Père-Ambroise,"2093, rue de la Visitation, Montréal",Ville-Marie,45.522823,-73.5626642,Ville-Marie
+41,Bibliothèque Réjean-Ducharme,"2450, rue Workman, Montréal",Le Sud-Ouest,45.4836471,-73.5751464,Le Sud-Ouest
+42,Bibliothèque Robert-Bourassa,"41, avenue Saint-Just, Montréal",Outremont,45.51795985,-73.60837244653848,Outremont
+43,Bibliothèque Saint-Charles,"1050, rue d'Hibernia, Montréal",Le Sud-Ouest,45.4792104,-73.5635483,Le Sud-Ouest
+44,Bibliothèque Saint-Henri,"4707, rue Notre-Dame Ouest, Montréal",Le Sud-Ouest,45.4726461,-73.5891097,Le Sud-Ouest
+45,Bibliothèque Saul-Bellow,"3100, rue Saint-Antoine, Montréal",Lachine,45.4398384,-73.6921014,Lachine
+46,Bibliothèque William-G.-Boll,"110, rue Cartier, Montréal",Pierrefonds-Roxboro,45.5026224,-73.8145453,Pierrefonds-Roxboro
+47,Bibliothèque Yves-Ryan,"4740, rue de Charleroi, Montréal",Montréal-Nord,45.5965067,-73.6315415,Montréal-Nord
+48,Biodôme de Montréal,"4777, avenue Pierre-De Coubertin, Montréal",Mercier–Hochelaga-Maisonneuve,45.5596817,-73.5495704,Mercier-Hochelaga-Maisonneuve
+49,Biosphère,"160, chemin du Tour de l'isle, Montréal",Ville-Marie,45.51941407191589,-73.53360614275512,Ville-Marie
+50,Carrefour récréatif et communautaire de LaSalle,"8700, rue Hardy, Montréal",LaSalle,45.4331428,-73.635921,LaSalle
+51,Caverne de Saint-Léonard,"5200, boulevard Lavoisier, Montréal",Saint-Léonard,45.5876144,-73.6100005,Saint-Léonard
+52,Centre communautaire d'Ahuntsic,"10780, rue Laverdure, Montréal",Ahuntsic-Cartierville,45.5523957,-73.67198050817895,Ahuntsic-Cartierville
+53,Centre communautaire d'Anjou,"7800, boulevard Métropolitain Est, Montréal",Anjou,45.6422597,-73.5328755,Montréal-Est
+54,Centre communautaire de loisirs Sainte-Catherine d’Alexandrie,"1700, rue Atateken, Montréal",Ville-Marie,45.518892676470585,-73.56045655294118,Ville-Marie
+55,Centre communautaire de Rivière-des-Prairies,"9140, boulevard Perras, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.650222,-73.5775008,Rivière-des-Prairies-Pointe-aux-Trembles
+56,Centre communautaire Elgar,"260, rue Elgar, Montréal",Verdun,45.4572081,-73.5468802,Verdun
+57,Centre communautaire Gerry-Robertson,"9665, boulevard Gouin Ouest, Montréal",Pierrefonds-Roxboro,45.5048631,-73.7853577,Pierrefonds-Roxboro
+58,Centre communautaire intergénérationnel,"999, avenue McEachran, Montréal",Outremont,45.5199735,-73.61951115178306,Outremont
+59,Centre communautaire Marcel-Giroux,"4501, avenue Bannantyne, Montréal",Verdun,,,
+60,Centre communautaire Marcel-Morin,"14068, boulevard Gouin Ouest, Montréal",Pierrefonds-Roxboro,45.495411450000006,-73.85079678565933,Pierrefonds-Roxboro
+61,Centre communautaire Roussin,"12125, rue Notre-Dame Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.5858544,-73.5078805,Mercier-Hochelaga-Maisonneuve
+62,Centre communautaire Saint-Pierre,"69, avenue Saint-Pierre, Montréal",Lachine,45.44396734035087,-73.64879321403508,Lachine
+63,Centre communautaire Sainte-Maria-Goretti,"15912, rue Notre-Dame Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.5858544,-73.5078805,Mercier-Hochelaga-Maisonneuve
+64,Centre culturel Calixa-Lavallée,"3819, avenue Calixa-Lavallée, Montréal",Le Plateau-Mont-Royal,45.5270684,-73.5693956,Le Plateau-Mont-Royal
+65,Centre culturel de Notre-Dame-de-Grâce,"6400, avenue de Monkland, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4663823,-73.6309558,Côte-des-Neiges-Notre-Dame-de-Grâce
+66,Centre culturel de Pierrefonds,"13850, boulevard Gouin Ouest, Montréal",Pierrefonds-Roxboro,45.4966015,-73.8492122,Pierrefonds-Roxboro
+67,Centre culturel et communautaire de Cartierville,"12225, rue Grenet, Montréal",Ahuntsic-Cartierville,45.530242,-73.715862,Ahuntsic-Cartierville
+68,Centre culturel et communautaire Henri-Lemieux,"7644, rue Édouard, Montréal",LaSalle,45.4308552,-73.5943567,LaSalle
+69,Centre d'activités communautaires Le Carignan,"11479, avenue P.-M.-Favier, Montréal",Montréal-Nord,45.6103642,-73.6170414,Montréal-Nord
+70,Centre d'activités communautaires Primeau,"10958, avenue Pelletier, Montréal",Montréal-Nord,45.5927611,-73.6339487,Montréal-Nord
+71,Centre d'activités communautaires Saint-Laurent,"11614, avenue Salk, Montréal",Montréal-Nord,45.6064452,-73.6290272,Montréal-Nord
+72,Centre d'activités communautaires Sauvé,"11440, avenue Éthier, Montréal",Montréal-Nord,45.5997791,-73.6354184,Montréal-Nord
+73,Centre d'exposition Lethbridge,"2727, boulevard Thimens, Montréal",Saint-Laurent,45.5044581,-73.7048768,Saint-Laurent
+74,Centre de loisirs Monseigneur Pigeon,"5555, rue Angers, Montréal",Le Sud-Ouest,45.4618413,-73.5846931,Le Sud-Ouest
+75,Centre de loisirs Montréal-Nord,"11121, avenue Salk, Montréal",Montréal-Nord,45.6011919,-73.6231119,Montréal-Nord
+76,Centre de loisirs multiethnique Saint-Louis,"3555, rue Saint-Urbain, Montréal",Le Plateau-Mont-Royal,45.512240192682924,-73.57242882195122,Le Plateau-Mont-Royal
+77,Centre des loisirs de Saint-Laurent,"1375, rue Grenet, Montréal",Saint-Laurent,45.5141591,-73.6908893,Saint-Laurent
+78,Centre du Plateau,"2275, boulevard Saint-Joseph Est, Montréal",Le Plateau-Mont-Royal,45.5393802,-73.5757283,Le Plateau-Mont-Royal
+79,Centre éducatif communautaire René-Goupil,"4105, 47e rue, Montréal",Villeray–Saint-Michel–Parc-Extension,45.5803704,-73.6220697,Villeray-Saint-Michel-Parc-Extension
+80,Centre Fernand-Laplaine,"183, rue Des Érables, Montréal",Lachine,45.4457062,-73.6513223,Lachine
+81,Centre Gabrielle-et-Marcel-Lapalme,"5350, rue Lafond, Montréal",Rosemont–La Petite-Patrie,45.552599,-73.5720321,Rosemont-La Petite-Patrie
+82,Centre Jean-Claude-Malépart,"2633, rue Ontario Est, Montréal",Ville-Marie,45.533894999999994,-73.5521092,Ville-Marie
+83,Centre Lorne,"2390, rue de Ryde, Montréal",Le Sud-Ouest,,,
+84,Centre Oliver-Jones,"525, rue du Dominion, Montréal",Le Sud-Ouest,45.4369366,-73.6635775,Lachine
+85,Centre Père-Marquette,"1600, rue de Drucourt, Montréal",Rosemont–La Petite-Patrie,45.540996,-73.59493220032282,Rosemont-La Petite-Patrie
+86,"Centre récréatif, culturel et sportif St-Zotique","75, rue du square Sir-George-Étienne-Cartier, Montréal",Le Sud-Ouest,,,
+87,Centre récréatif de Rivière-des-Prairies,"7650, boulevard Maurice-Duplessis, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.6277269,-73.5943597,Rivière-des-Prairies-Pointe-aux-Trembles
+88,Centre Roger-Rousseau,"7501, avenue Rondeau, Montréal",Anjou,45.6159526,-73.550939,Anjou
+89,Centre Saint-Henri,"530, rue du Couvent, Montréal",Le Sud-Ouest,45.4781759,-73.5849627,Le Sud-Ouest
+90,Centre socioculturel de l'Île-Bizard,"490, montée de l’Église, Montréal",L'Île-Bizard–Sainte-Geneviève,45.48942087537152,-73.8826855357409,L'Île-Bizard-Sainte-Geneviève
+91,Centre St Jax,"1439, rue Sainte-Catherine Ouest, Montréal",Ville-Marie,45.49652805,-73.5769948808283,Ville-Marie
+92,Chapelle historique du Bon-Pasteur,"100, rue Sherbrooke Est, Montréal",Ville-Marie,45.5132866,-73.56856165327022,Ville-Marie
+93,Cinéma Beaubien,"2396, rue Beaubien Est, Montréal",Rosemont–La Petite-Patrie,45.5480677,-73.5920883,Rosemont-La Petite-Patrie
+94,Collège Regina Assumpta,"1750, rue Sauriol Est, Montréal",Ahuntsic-Cartierville,45.56511935,-73.64958376578232,Ahuntsic-Cartierville
+95,École Saint-Rémi annexe,"4041, rue Monselet, Montréal",Montréal-Nord,45.5896619,-73.6378064,Montréal-Nord
+96,Église de la Visitation,"1847, boulevard Gouin Est, Montréal",Ahuntsic-Cartierville,45.5704448,-73.6604751,Ahuntsic-Cartierville
+97,Église évangélique arménienne,"11455, rue Drouart, Montréal",Ahuntsic-Cartierville,45.536586263414634,-73.68768730731708,Ahuntsic-Cartierville
+98,Église Marie-Reine-de-la-Paix,"11075, boulevard Gouin Ouest, Montréal",Pierrefonds-Roxboro,45.5109879,-73.8136222,Pierrefonds-Roxboro
+99,Église Saint-Charles,"2111, rue Centre, Montréal",Le Sud-Ouest,45.4814099,-73.5647282,Le Sud-Ouest
+100,Église Saint-Joseph,"10050, boulevard Gouin Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.5706212,-73.6603636,Ahuntsic-Cartierville
+101,Église Saint-René-Goupil,"4251, rue du Parc-René-Goupil, Montréal",Villeray–Saint-Michel–Parc-Extension,,,
+102,Église Sainte-Claire,"8615, rue Sainte-Claire, Montréal",Mercier–Hochelaga-Maisonneuve,45.6017671,-73.52466505000001,Mercier-Hochelaga-Maisonneuve
+103,Église Sainte-Marthe,"7580, boulevard Gouin Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.6372302,-73.6061563,Rivière-des-Prairies-Pointe-aux-Trembles
+104,Espace 40e/Beaubien,"5147, rue Beaubien Est, Montréal",Rosemont–La Petite-Patrie,45.572907,-73.5708494,Rosemont-La Petite-Patrie
+105,FabricARThèque du Vieux-Saint-Laurent,"1380, rue de l'Église, Montréal",Saint-Laurent,45.5126182,-73.6765411,Saint-Laurent
+106,Fabricathèque du Sud-Ouest,"4707, rue Notre-Dame Ouest, Montréal",Le Sud-Ouest,45.4726461,-73.5891097,Le Sud-Ouest
+107,Fabricathèque Pierrefonds,"13555, boulevard de Pierrefonds, Montréal",Pierrefonds-Roxboro,45.4960289,-73.8475197,Pierrefonds-Roxboro
+108,Galerie d’Outremont,"41, avenue Saint-Just, Montréal",Outremont,45.51795985,-73.60837244653848,Outremont
+109,Galerie Port-Maurice,"8420, boulevard Lacordaire, Montréal",Saint-Léonard,45.5866552,-73.5977342,Saint-Léonard
+110,Gym culturel,"3819, avenue Calixa-Lavallée, Montréal",Le Plateau-Mont-Royal,45.5270684,-73.5693956,Le Plateau-Mont-Royal
+111,Halte culturelle,"14 001, rue Notre-Dame Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.6680518,-73.494856,Rivière-des-Prairies-Pointe-aux-Trembles
+112,Insectarium de Montréal,"4581, rue Sherbrooke Est, Montréal",Mercier–Hochelaga-Maisonneuve,45.5610403,-73.5547377,Rosemont-La Petite-Patrie
+113,L’Entrepôt - Complexe culturel Guy-Descary,"2901, boulevard Saint-Joseph, Montréal",Lachine,45.4334364,-73.6899451,Lachine
+114,La STATION - Maison intergénérationnelle,"201, rue Berlioz, Verdun, Montréal",Verdun,45.4596114,-73.5443855,Verdun
+115,Ludothèque du parc Clifford,"1820. avenue Clifford, Montréal",Le Sud-Ouest,45.4507064,-73.5896502,Le Sud-Ouest
+116,Ludothèque du parc des Compagnons-de-Saint-Laurent,"4375, rue Cartier, Montréal",Le Plateau-Mont-Royal,45.5334618,-73.5734263,Le Plateau-Mont-Royal
+117,Ludothèque du parc des Jazzmen,"2248, avenue Lionel-Groulx, Montréal",Le Sud-Ouest,45.48578254460681,-73.57434814014984,Le Sud-Ouest
+118,Ludothèque du parc Hilda-Ramacière,"Rue De Bullion, Montréal",Le Plateau-Mont-Royal,45.5230069,-73.587932,Le Plateau-Mont-Royal
+119,Maison Antoine-Beaudry,"14678, rue Notre-Dame Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.5858544,-73.5078805,Mercier-Hochelaga-Maisonneuve
+120,Maison Brignon-Dit-Lapierre,"4251, boulevard Gouin Est, Montréal",Montréal-Nord,45.5994259,-73.6434122,Montréal-Nord
+121,Maison culturelle et communautaire de Montréal-Nord,"12004, boulevard Rolland, Montréal",Montréal-Nord,45.61567133333333,-73.61996713333333,Montréal-Nord
+122,Maison d'Haïti,"3245, avenue Émile-Journault, Montréal",Villeray–Saint-Michel–Parc-Extension,45.5473003,-73.6422635,Ahuntsic-Cartierville
+123,Maison de la culture Ahuntsic,"10300, rue Lajeunesse, Montréal",Ahuntsic-Cartierville,45.553483,-73.6626049,Ahuntsic-Cartierville
+124,Maison de la culture Claude-Léveillée,"911, rue Jean-Talon Est, Montréal",Villeray–Saint-Michel–Parc-Extension,45.5417298,-73.6132054,Villeray-Saint-Michel-Parc-Extension
+125,Maison de la culture de Côte-des-Neiges,"5290, chemin de la Côte-des-Neiges, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4959208,-73.62230323536173,Côte-des-Neiges-Notre-Dame-de-Grâce
+126,Maison de la culture de Pointe-aux-Trembles,"14001, rue Notre-Dame Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.5858544,-73.5078805,Mercier-Hochelaga-Maisonneuve
+127,Maison de la culture de Rosemont–La Petite-Patrie,"6707, avenue De Lorimier, Montréal",Rosemont–La Petite-Patrie,45.5474061,-73.5982926,Rosemont-La Petite-Patrie
+128,Maison de la culture du Plateau-Mont-Royal,"465, avenue du Mont-Royal Est, Montréal",Le Plateau-Mont-Royal,45.5248812,-73.5824623,Le Plateau-Mont-Royal
+129,Maison de la culture Janine-Sutto,"2550, rue Ontario Est, Montréal",Ville-Marie,45.5329177,-73.5517134,Ville-Marie
+130,Maison de la culture Maisonneuve,"4200, rue Ontario Est, Montréal",Mercier–Hochelaga-Maisonneuve,45.5511634,-73.54022997048678,Mercier-Hochelaga-Maisonneuve
+131,Maison de la culture Marie-Uguay,"6052, boulevard Monk, Montréal",Le Sud-Ouest,45.4576905,-73.5954481,Le Sud-Ouest
+132,Maison de la culture Mercier,"8105, rue Hochelaga, Montréal",Mercier–Hochelaga-Maisonneuve,45.5955039,-73.5236768,Mercier-Hochelaga-Maisonneuve
+133,Maison de la culture Notre-Dame-de-Grâce – Botrel,"3755, rue Botrel, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4755031,-73.6143992,Côte-des-Neiges-Notre-Dame-de-Grâce
+134,Maison de la culture Notre-Dame-de-Grâce – Monkland,"6400, avenue de Monkland, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4663823,-73.6309558,Côte-des-Neiges-Notre-Dame-de-Grâce
+135,Maison du brasseur - Complexe culturel Guy-Descary,"2901, boulevard Saint-Joseph, Montréal",Lachine,45.4334364,-73.6899451,Lachine
+136,Maison Joseph-Gagnon,"5345, rue Jarry Est, Montréal",Saint-Léonard,45.5840873,-73.5915952,Saint-Léonard
+137,"Maison Nivard-De Saint-Dizier, musée et site archéologique","7244, boulevard LaSalle, Montréal",Verdun,45.4373784,-73.5830173,Verdun
+138,Maison Pierre-Chartrand - maison de la culture de Rivière-des-Prairies,"8000, boulevard Gouin Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.6424032,-73.5990248,Rivière-des-Prairies-Pointe-aux-Trembles
+139,MEM - Centre des mémoires montréalaises,"1210, boulevard Saint-Laurent, Montréal",Ville-Marie,45.509412410630844,-73.56306252050115,Ville-Marie
+140,Mini-bibliothèque de Chameran,"260, rue Marcotte, Montréal",Saint-Laurent,45.5286235,-73.6774723,Saint-Laurent
+141,Musée de Lachine,"1, chemin du Musée, Montréal",Lachine,45.4294061,-73.6660885,Lachine
+142,Parc du Vieux-Moulin de Pointe-aux-Trembles,"11630, rue Notre-Dame Est, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.5858544,-73.5078805,Mercier-Hochelaga-Maisonneuve
+143,Pavillon des aînés,"2401, rue Mullins, Montréal",Le Sud-Ouest,45.482974,-73.5591507,Le Sud-Ouest
+144,Pavillon du parc Gilbert-Layton,"6975, avenue Chester, Montréal",Côte-des-Neiges–Notre-Dame-de-Grâce,45.4660839,-73.6492843,Côte-des-Neiges-Notre-Dame-de-Grâce
+145,Piano public de la place de la création,"À l’angle des rues Parthenais et Ontario Est, Montréal",Ville-Marie,,,
+146,Piano public du Marché Jean-Talon,"Place du Marché-du-Nord, Montréal",Rosemont–La Petite-Patrie,45.5356617,-73.614466,Rosemont-La Petite-Patrie
+147,Piano public du Potager urbain,"À l'angle de la rue Sainte-Catherine Est et Saint-Hubert, Montréal",Ville-Marie,,,
+148,Place de la création,"À l’angle des rues Parthenais et Ontario Est, Montréal",Ville-Marie,,,
+149,Planétarium Rio Tinto Alcan de Montréal,"4801, avenue Pierre-De Coubertin, Montréal",Mercier–Hochelaga-Maisonneuve,45.5605883,-73.5474189,Mercier-Hochelaga-Maisonneuve
+150,"Pointe-à-Callière, cité d'archéologie et d'histoire de Montréal","350, place Royale, Montréal",Ville-Marie,45.50263065,-73.55418114932368,Ville-Marie
+151,Quai 5160 – Maison de la culture de Verdun,"5160, boulevard LaSalle, Montréal",Verdun,45.4544589,-73.5656906,Verdun
+152,Salle de diffusion de Parc-Extension,"421, rue Saint-Roch, Montréal",Villeray–Saint-Michel–Parc-Extension,45.5314163,-73.6289844,Villeray-Saint-Michel-Parc-Extension
+153,Salle Désilets du Cégep Marie-Victorin,"7000, rue Marie-Victorin, Montréal",Rivière-des-Prairies–Pointe-aux-Trembles,45.6174314,-73.6063948,Rivière-des-Prairies-Pointe-aux-Trembles
+154,Salle Émile-Legault,"613, avenue Sainte-Croix, Montréal",Saint-Laurent,45.51174203592233,-73.6725227854369,Saint-Laurent
+155,Salle Jean-Eudes,"3535, boulevard Rosemont, Montréal",Rosemont–La Petite-Patrie,45.5547551,-73.579298,Rosemont-La Petite-Patrie
+156,Salle Madeleine-Lahaye,"500, montée de l'Église, L'Île-Bizard, Montréal",L'Île-Bizard–Sainte-Geneviève,45.4886567,-73.8823134,L'Île-Bizard-Sainte-Geneviève
+157,Salle Pauline-Julien,"15615, Gouin Boulevard Ouest, Montréal",L'Île-Bizard–Sainte-Geneviève,45.4833226,-73.8676089,L'Île-Bizard-Sainte-Geneviève
+158,Serres municipales de Verdun,"7000, boulevard LaSalle, Montréal",Verdun,45.4430937,-73.5774798,Verdun
+159,Station hivernale Voir l'hiver en rose,"7560, boulevard Lacordaire, Montréal",Saint-Léonard,45.5818598,-73.584296,Saint-Léonard
+160,Théâtre de Verdure,"3939, avenue du Parc-La Fontaine, Montréal",Le Plateau-Mont-Royal,45.5230918,-73.5689113,Le Plateau-Mont-Royal
+161,Théâtre Desjardins,"1111, rue Lapierre, Montréal",LaSalle,45.43620265,-73.60544000484967,LaSalle
+162,Théâtre Mirella et Lino Saputo,"8370, boulevard Lacordaire, Montréal",Saint-Léonard,45.585431,-73.59703763047705,Saint-Léonard
+163,Théâtre Outremont,"1248, avenue Bernard Ouest, Montréal",Outremont,,,
+164,Vieille brasserie - Complexe culturel Guy-Descary,"2801, boulevard Saint-Joseph, Montréal",Lachine,45.433610958958354,-73.68890030262082,Lachine
