@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 * {
   box-sizing: border-box;
 }
@@ -12,12 +10,13 @@ html, body {
 body {
   padding: 0;
   margin: 0;
-  background: #152536;
+  background: linear-gradient(130deg, #192d60, #32577f, #fff);
   font-family: Roboto;
   font-weight: 200;
+  height: 97vh;
 }
 h3 {
-  font-weight: 400;
+  font-weight: 600;
 }
 .bold {
   font-weight: 800;
@@ -29,10 +28,8 @@ a[href] {
 }
 a[href], a[href]:link, a[href]:visited, a[href]:active {
   text-decoration: none;
-  color: #d8276c;
-  text-shadow: 2px 2px 2px #070c11;
-  padding-bottom: 3px;
-  font-weight: bold;
+
+  font-weight: 800;
 }
 a[href]::after {
   content: "";
@@ -132,13 +129,15 @@ article.card:hover .infos .seats, article.card:hover .infos .txt, article.card:h
   opacity: 1;
 }
 
-  
+  .title {
+    color: #fff;
+    text-align: center;
+  }
   h1 {
     color: #333;
     text-align: center;
   }
-  
-  form {
+  .box {
     margin: 20px auto;
     max-width: 500px;
     padding: 20px;
@@ -149,8 +148,8 @@ article.card:hover .infos .seats, article.card:hover .infos .txt, article.card:h
   
   label {
     display: block;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 0.8rem;
+    font-weight: 600;
     margin-bottom: 10px;
     color: #333;
   }
@@ -165,7 +164,7 @@ article.card:hover .infos .seats, article.card:hover .infos .txt, article.card:h
   }
   
   input[type="submit"] {
-    background-color: #333;
+    background-color: hsl(242deg 52% 46%);
     border: none;
     color: #fff;
     padding: 10px 20px;
@@ -173,6 +172,8 @@ article.card:hover .infos .seats, article.card:hover .infos .txt, article.card:h
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    position: relative;
+    left: 45%;
   }
   
   input[type="submit"]:hover {
@@ -246,3 +247,4 @@ article.card:hover .infos .seats, article.card:hover .infos .txt, article.card:h
     align-items: center;
   }
  
+  

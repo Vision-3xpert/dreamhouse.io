@@ -2,130 +2,136 @@
 <html>
 <head>
 	<title>Bienvenue sur dreamhouse.io</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-	<h1>Bienvenue sur dreamhouse.io</h1>
+	<h1 class="title">Bienvenue sur dreamhouse.io</h1>
 	<form method="POST">
-		<label for="cafe">Quel poids apportez-vous aux cafés locaux?</label>
-		<select id="cafe" name="cafe">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="car">Quel poids apportez-vous à l'accès aux véhicules?</label>
-		<select id="car" name="car">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="quiet">Quel poids apportez-vous au niveau de quiet du quartier?</label>
-		<select id="quiet" name="quiet">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="cycling">Quel poids apportez-vous aux parcs dans les environs?</label>
-		<select id="cycling" name="cycling">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="park">Quel poids apportez-vous aux parcs dans les environs?</label>
-		<select id="park" name="park">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="walk">Quel poids apportez-vous aux walk dans les environs?</label>
-		<select id="walk" name="walk">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="transit">Quel poids apportez-vous aux transit dans les environs?</label>
-		<select id="transit" name="transit">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="vibrant">Quel poids apportez-vous aux vibrant dans les environs?</label>
-		<select id="vibrant" name="vibrant">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="daycares">Quel poids apportez-vous aux daycares dans les environs?</label>
-		<select id="daycares" name="daycares">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="primary">Quel poids apportez-vous aux primary dans les environs?</label>
-		<select id="primary" name="primary">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="shopping">Quel poids apportez-vous aux shopping dans les environs?</label>
-		<select id="shopping" name="shopping">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-
-		<label for="groceries">Quel poids apportez-vous aux groceries dans les environs?</label>
-		<select id="groceries" name="groceries">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-		
-		<label for="nightlife">Quel poids apportez-vous aux nightlife dans les environs?</label>
-		<select id="nightlife" name="nightlife">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-		
-		<label for="restaurant">Quel poids apportez-vous aux restaurant dans les environs?</label>
-		<select id="restaurant" name="restaurant">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
-		
-		<label for="high_school">Quel poids apportez-vous aux high_school dans les environs?</label>
-		<select id="high_school" name="high_school">
-			<option value="0">0</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select><br>
+		<div class="grid">
+			<div>
+				<h2 class="title"> Mode de vie</h2>
+				<div class="box">
+					<label for="cafe">Quel poids apportez-vous aux cafés locaux?</label>
+					<select id="cafe" name="cafe">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="shopping">Quel poids apportez-vous aux magasins dans les environs?</label>
+					<select id="shopping" name="shopping">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="nightlife">Quel poids apportez-vous aux acitivités de nuit dans les environs?</label>
+					<select id="nightlife" name="nightlife">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="restaurant">Quel poids apportez-vous aux restaurant dans les environs?</label>
+					<select id="restaurant" name="restaurant">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="vibrant">Quel poids apportez-vous à la vibrance du quartier?</label>
+					<select id="vibrant" name="vibrant">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+				</div>
+			</div>
+			<div>
+				<h2 class="title">Accessibilité</h2>
+				<div class="box">
+					<label for="park">Quel poids apportez-vous aux parcs dans les environs?</label>
+					<select id="park" name="park">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="car">Quel poids apportez-vous à l'accessibilité en véhicule?</label>
+					<select id="car" name="car">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="walk">Quel poids apportez-vous à l'accesisbilité à pied?</label>
+					<select id="walk" name="walk">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="cycling">Quel poids apportez-vous à l'accès aux pistes cyclables dans les environs?</label>
+					<select id="cycling" name="cycling">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="transit">Quel poids apportez-vous à l'accesisbilitéaux transports en commun?</label>
+					<select id="transit" name="transit">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+				</div>
+			</div>
+			<div>
+				<h2 class="title">Vie Familiale</h2>
+				<div class="box">
+				
+					<label for="quiet">Quel poids apportez-vous au niveau de calme du quartier?</label>
+					<select id="quiet" name="quiet">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="groceries">Quel poids apportez-vous au nombre d'épicerie dans les environs?</label>
+					<select id="groceries" name="groceries">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="high_school">Quel poids apportez-vous aux écoles secondaire dans les environs?</label>
+					<select id="high_school" name="high_school">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="daycares">Quel poids apportez-vous aux garderies dans les environs?</label>
+					<select id="daycares" name="daycares">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+					<label for="primary">Quel poids apportez-vous aux écoles primaire dans les environs?</label>
+					<select id="primary" name="primary">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select><br>
+				</div>
+			</div>
+		</div>
 
 		<input type="submit" value="Envoyer">
 	</form>
