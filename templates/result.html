@@ -16,7 +16,7 @@
         <article class="card">
             <div class="thumb">  <img src="{{ url_for('static', filename='images/' + quartiers_images[quartier]) }}" alt="{{ quartier }}" ></div>
             <div class="infos">
-              <h2 class="title">{{ quartier }}<span class="flag"></span></h2>
+              <h2 class="title">{{ quartier }}</h2>
               <h3 class="superficie"><span class="bold">Superficie (km2):</span> {{ démo[quartier][1] }}  </h3>
               <h3 class="seats"><span class="bold">Revenu moyen:</span> 90 000$</h3>
               <h3 class="seats"><span class="bold">Prix moyen par pièces:</span> {{ price_piece[quartier] }}</h3>
