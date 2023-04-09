@@ -1,13 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>Carte de quartier</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte avec filtres</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-******" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 450px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      overflow-y: auto;
+	  z-index:10000;
+    }
+
+    #mapid {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+	.form-group {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	.form-field {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+	}
+	.form-check {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0 1rem!important;
+	}
+	input, select {
+		width: 90%!important;
+	}
+	input[type='checkbox']{
+		width: 30px!important;
+		height: 30px!important;
+		padding-left: 10px;
+
+	}
+	.table-condensed td,
+.table-condensed th {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Ajoutez cette règle pour ajuster l'espace entre les colonnes */
+.table-condensed td:nth-child(odd) {
+  padding-right: 1.5rem;
+}
+
+
+
+  </style>
 </head>
 <body>
-	<div id="mapid" style="width: 100%; height: 0px;"></div>
-	{{ map|safe }}
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+  <div class="sidebar">
+	<div class="form-group">
+		<h2>Quartier:</h2>
+		<h2> {{ nom_quartier }}</h2>
+	</div>
+	<table class="table table-bordered table-striped table-condensed">
+		<thead>
+		  <tr>
+			<th>Propriété</th>
+			<th>Valeur</th>
+			<th>Carte</th>
+			<th>Valeur</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Type de Propriétés</td>
+			<td>{{ filter_type }}</td>
+			<td>Nb de propriétés</td>
+			<td>{{ nb_house }}</td>
+
+		  </tr>
+		  <tr>
+			<td>Prix minimum</td>
+			<td>{{ min_price }}</td>
+			<td>Nb de Centre Communautaire <i class="fa fa-tree fa-green"></i></td>
+			<td>{{ nb_communities }}</td>
+
+		  </tr>
+		  <tr>
+			<td>Prix maximum</td>
+			<td>{{ max_price }}</td>
+			<td>Nb de parcs <i class="fa fa-tree fa-green"></i></td>
+			<td>{{ nb_parcs }}</td>
+		  </tr>
+		  <tr>
+
+			<td>Chambres minimum</td>
+			<td>{{ min_bedrooms }}</td>
+			<td>Nb de Centres Sportifs <i class="fa fa-tree fa-green"></i></td>
+			<td>{{ nb_sports }}</td>
+		  </tr>
+		  <tr>
+			<td>SDB minimum</td>
+			<td>{{ min_bathrooms }}</td>
+
+			<td>Nb de Mairies</td>
+			<td>{{ nb_mairies }}</td>
+		  </tr>
+		</tbody>
+	  </table>
+	  
+	  
+
+	
+
+    <form action="{{ url_for('quartier') }}" method="get">
+
+			<input type="hidden" name="form_submitted" value="1">
+
+		
+      <div class="form-group">
+        <div class="form-field">
+        	<label for="type">Type de Propriétés</label>
+        	<select class="form-control" id="type" name="type">
+        	  <option value="">Tous</option>
+        	  <option value="Maison">Maison</option>
+        	  <option value="Condo">Condo</option>
+        	  <option value="plex">plex</option>
+        	</select>
+        </div>
+		<div class="form-field">
+			<label for="nb_house">Nombre de Propriétés</label>
+					<input type="number" class="form-control" id="nb_house" name="nb_house" value="30" step="1" min="1">
+		</div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-field">
+			<label for="min_price">Prix minimum</label>
+			<input type="number" class="form-control" id="min_price" name="min_price" step="1000">
+		</div>
+
+
+        <div class="form-field">
+			<label for="max_price">Prix maximum</label>
+			<input type="number" class="form-control" id="max_price" name="max_price" step="1000">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="form-field">
+
+			<label for="min_bedrooms">Chambres minimum</label>
+			<input type="number" class="form-control" id="min_bedrooms" name="min_bedrooms" step="1" min="1">
+		</div>
+
+        <div class="form-field">
+			<label for="min_bathrooms">Salles de bain minimum</label>
+			<input type="number" class="form-control" id="min_bathrooms" name="min_bathrooms" step="1" min="1">
+		</div>
+    </div>
+	<div class="form-check">
+		<label for="landmarks">Points d'attraction</label>
+		<div class="form-group">
+			<div class="form-check">
+				{% if not form_submitted and park_weight > 0 %}
+				<input type="checkbox" name="landmarks" value="parks" id="parks" checked>
+				{% else %}
+				<input type="checkbox" name="landmarks" value="parks" id="parks">
+				{% endif %}
+				
+
+				
+								<label for="parks">Parcs</label><br>
+			</div>
+			<div class="form-check">
+				<input class="form-control" type="checkbox" id="sports" name="landmarks" value="sports">
+				<label for="sports">Sports </label><br>
+			</div>
+			<div class="form-check">
+				<input class="form-control" type="checkbox" id="communities" name="landmarks" value="communities">
+				<label for="communities">Communauté </label><br>
+			</div>
+			<div class="form-check">
+				<input class="form-control" type="checkbox" id="Mairies" name="landmarks" value="Mairies">
+				<label for="Mairies">Mairies</label><br>
+			</div>
+		</div>
+
+	</div>
+
+
+	  <input type="hidden" name="quartier" value="{{ nom_quartier }}">
+
+      <div class="form-group">
+        <input type="submit" value="Appliquer les filtres" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+
+  <div id="mapid" style="width: 100%; height: 100%;"></div>
+  {{ map|safe }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+
 </body>
 </html>
+
 

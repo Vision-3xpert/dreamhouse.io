@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1 class="title">Bienvenue sur dreamhouse.io</h1>
-	<form method="POST">
+	<form method="POST" action="{{ url_for('save_weights') }}">
 		<div class="grid">
 			<div>
 				<h2 class="title"> Mode de vie</h2>
@@ -135,5 +135,6 @@
 
 		<input type="submit" value="Envoyer">
 	</form>
+
 </body>
 </html>
