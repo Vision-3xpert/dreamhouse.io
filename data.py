@@ -1,31 +1,49 @@
 import pandas as pd
 import requests
+import os
+import json
 
 def load_data():
-    quartier_url = 'https://data.montreal.ca/dataset/00bd85eb-23aa-4669-8f1b-ba9a000e3dd8/resource/e9b0f927-8f75-458c-8fda-b5da65cc8b73/download/limadmin.geojson'
-    Montreal = []
+    base_path = os.path.dirname(os.path.abspath(__file__))
+
+    geojson_path = os.path.join(base_path, "MTLTieks.geojson")
+    with open(geojson_path, 'r') as file:
+        Montreal = json.load(file)
+
     clean_price = []
     clean_bed = []
     clean_bath = []
 
-    try:
-        r2 = requests.get(quartier_url, timeout=30)
-    except requests.exceptions.RequestException as erreur2:
-        print(f"Erreur de connexion à l'adresse web suivante {quartier_url} : {erreur2}")
-    else:
-        if r2.status_code >= 200 and r2.status_code <= 299:
-            Montreal = r2.json()
-        else:
-            print(f"Erreur de connexion à l'adresse web suivante {quartier_url} : erreur {r2.status_code}")
 
-    superficie = pd.read_csv("CSVs/Superficie_quartier.csv")
-    Price_per_piece = pd.read_csv("Export/Price_per_piece.csv")
-    Rest_per_KM = pd.read_csv("Export/Rest_per_KM.csv")
-    Communitycenters = pd.read_csv("Export/Communitycenters.csv")
-    houses = pd.read_csv("Export/Houses2V1.csv")
-    Mairies = pd.read_csv("Export/Mairies.csv")
-    Parcs = pd.read_csv("Export/Parcs.csv")
-    Sportscenters = pd.read_csv("Export/Sportscenters.csv")
+
+    superficie_path = os.path.join(base_path, "CSVs/Superficie_quartier.csv")
+    superficie = pd.read_csv(superficie_path)
+
+    démographie_path = os.path.join(base_path, "CSVs/demographie.csv")
+    démographie = pd.read_csv(démographie_path)
+    démo_quartier = pd.merge(superficie,démographie, how="left")
+
+
+    price_per_piece_path = os.path.join(base_path, "Export/Price_per_piece.csv")
+    Price_per_piece = pd.read_csv(price_per_piece_path)
+
+    Rest_per_KM_path = os.path.join(base_path, "Export/Rest_per_KM.csv")
+    Rest_per_KM = pd.read_csv(Rest_per_KM_path)
+
+    Communitycenters_path = os.path.join(base_path, "Export/Communitycenters.csv")
+    Communitycenters = pd.read_csv(Communitycenters_path)
+
+    houses_path = os.path.join(base_path, "Export/Houses2V1.csv")
+    houses = pd.read_csv(houses_path)
+
+    Mairies_path = os.path.join(base_path, "Export/Mairies.csv")
+    Mairies = pd.read_csv(Mairies_path)
+
+    Parcs_path = os.path.join(base_path, "Export/Parcs.csv")
+    Parcs = pd.read_csv(Parcs_path)
+
+    Sportscenters_path = os.path.join(base_path, "Export/Sportscenters.csv")
+    Sportscenters = pd.read_csv(Sportscenters_path)
 
     houses["beds"] = houses['beds'].fillna(0)
     houses["baths"] = houses['baths'].fillna(0)
@@ -44,6 +62,21 @@ def load_data():
     houses["beds"] = clean_bed
     houses["baths"] = clean_bath
 
+    demographics = {}
+    for i, row in démo_quartier.iterrows():
+        age_groups = {
+            "0-14": row["0-14"],
+            "15-29": row["15-29"],
+            "30-59": row["30-59"],
+            "60+": row["60+"],
+        }
+        max_age_group = max(age_groups, key=age_groups.get)
+        Superficie_km2 = row["Superficie (km2)"]
+        Habitants = row["Habitants"]
+        Revenu = row["Revenu median"]
+        ville = row['NOM']
+        demographics[ville] = [Superficie_km2,Habitants,max_age_group, Revenu]
+
     test = houses.groupby("NOM").mean().round(2)
     my_dict = {i: r[:0 - 2] for i, r in test.iterrows()}
     new_dict = {}
@@ -54,6 +87,7 @@ def load_data():
 
     quartiers_images = {i: f"{i}.jpg" for i, r in test.iterrows()}
 
-    return Montreal, new_dict, quartiers_images,superficie, Price_per_piece, Rest_per_KM, Communitycenters, houses, Mairies, Parcs, Sportscenters
+    return Montreal, new_dict, quartiers_images, superficie, Price_per_piece, Rest_per_KM, Communitycenters, houses, Mairies, Parcs, Sportscenters, demographics
 
-Montreal, new_dict, quartiers_images,superficie, Price_per_piece, Rest_per_KM, Communitycenters, houses, Mairies, Parcs, Sportscenters = load_data()
+Montreal, new_dict, quartiers_images,superficie, Price_per_piece, Rest_per_KM, Communitycenters, houses, Mairies, Parcs, Sportscenters, demographics = load_data()
+

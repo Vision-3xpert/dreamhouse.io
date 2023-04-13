@@ -11,22 +11,28 @@
 <body>
 
         <h1 class="title">Résultat de la recommandation de quartiers</h1>
-        <div class="grid">
-        {% for quartier, scores in recommendations[:3] %}
-        <article class="card">
-            <div class="thumb">  <img src="{{ url_for('static', filename='images/' + quartiers_images[quartier]) }}" alt="{{ quartier }}" ></div>
+        <div class="grid" id="recommendations" data-limit="3">
+          {% for quartier, scores, explanation in zipped_data %}
+          <article class="card" {% if loop.index > 3 %}style="display: none"{% endif %}>
+             <div class="thumb">  <img src="{{ url_for('static', filename='images/' + quartiers_images[quartier]) }}" alt="{{ quartier }}" ></div>
             <div class="infos">
-              <h2 class="title">{{ quartier }}</h2>
-              <h3 class="superficie"><span class="bold">Superficie (km2):</span> {{ démo[quartier][1] }}  </h3>
-              <h3 class="seats"><span class="bold">Revenu moyen:</span> 90 000$</h3>
+                <h4 class="title">{{ quartier }}</h4>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h3 class="superficie"><span class="bold">Revenu médian:</span> {{ démo[quartier][3] }} </h3>
+              <h4 class="title" style="color:{{ colors[90] if scores[1]/scores[0] > 0.9 else (colors[70] if scores[1]/scores[0] > 0.7 else (colors[50] if scores[1]/scores[0] > 0.5 else colors[0])) }};">Score: {{ scores[1] }}/{{ scores[0] }}</h4>
+
+            </div>
+
+              <h3 class="seats"><span class="bold">Nombre d'habitants:</span> {{ démo[quartier][1] }}</h3>
+              <h3 class="seats"><span class="bold">Superficie (km2):</span> {{ démo[quartier][0] }}  </h3>
               <h3 class="seats"><span class="bold">Prix moyen par pièces:</span> {{ price_piece[quartier] }}</h3>
-              <h3 class="seats"><span class="bold">Nombre d'habitants:</span> {{ démo[quartier][0] }}</h3>
-              <h3 class="seats"><span class="bold">Âge moyen:</span> 38 ans</h3>
+              <h3 class="seats"><span class="bold">Groupe d'âge le plus populaire:</span> {{ démo[quartier][2] }}</h3>
           
               <p class="txt">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, sequi. Quam ratione animi delectus expedita obcaecati debitis at consectetur nemo, praesentium molestiae cum consequuntur, repellat adipisci incidunt, vitae officiis assumenda.
-              </p>
-              <a href="{{ url_for('quartier', quartier=quartier) }}"> <h3 class="details">Détail du quartier</h3></a>
+{% for i in explanation %}
+<span class="dot"></span>{{ i }}<br>
+{% endfor %}</p>
+              <a href="{{ url_for('quartier', quartier=quartier) }}"> <h3 class="btn">Détail du quartier</h3></a>
             </div>
           </article>
           <!--<div class="flex">
@@ -38,6 +44,28 @@
           </div>-->
 
     {% endfor %}
+    <div></div>
+    <button class="btn" id="showMoreBtn">Voir plus</button>
+
 </div>
+<script>
+  document.getElementById("showMoreBtn").addEventListener("click", function () {
+    const recommendationsDiv = document.getElementById("recommendations");
+    const currentLimit = parseInt(recommendationsDiv.getAttribute("data-limit"));
+    const newLimit = recommendationsDiv.children.length; // Affiche toutes les recommandations
+  
+    // Mettre à jour l'attribut data-limit
+    recommendationsDiv.setAttribute("data-limit", newLimit);
+  
+    // Afficher toutes les recommandations
+    for (let i = 0; i < newLimit; i++) {
+      recommendationsDiv.children[i].style.display = "block";
+    }
+  
+    // Masquer le bouton "Voir plus" après avoir affiché toutes les recommandations
+    this.style.display = "none";
+  });
+  </script>
+  
   </body>
 </html>

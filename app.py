@@ -6,8 +6,8 @@ import pandas as pd
 
 
 
-from data import Montreal, new_dict, quartiers_images, superficie, Price_per_piece, Rest_per_KM, Communitycenters, houses, Mairies, Parcs, Sportscenters
-from utils import create_marker, filter_dataframe, get_request_arg_int, style_function
+from data import Montreal, new_dict, quartiers_images,superficie, Price_per_piece, Rest_per_KM, Communitycenters, houses, Mairies, Parcs, Sportscenters, demographics
+from utils import create_marker, filter_dataframe, get_request_arg_int, style_function, generate_explanation, zip_lists
 
 
 app = Flask(__name__)
@@ -58,12 +58,14 @@ def save_weights():
     vibrant_weight = session.get('vibrant_weight', [])
     daycares_weight = session.get('daycares_weight', [])
     primary_weight = session.get('primary_weight', [])
-    shopping_weight = session.get('shopping_weight', [])               
+    shopping_weight = session.get('shopping_weight', [])
     groceries_weight = session.get('groceries_weight', [])
     nightlife_weight = session.get('nightlife_weight', [])
     restaurant_weight = session.get('restaurant_weight', [])
     high_school_weight = session.get('high_school_weight', [])
     recommandations = {}
+    quartiers_weighted_scores = {}  # Ajout d'un dictionnaire pour stocker les scores pondérés de chaque quartier
+
     for k, v in new_dict.items():
         scores = {
             'car_score': car_weight * new_dict[k]['car_score'],
@@ -81,17 +83,31 @@ def save_weights():
             'nightlife_score': nightlife_weight * new_dict[k]['nightlife_score'],
             'restaurant_score': restaurant_weight * new_dict[k]['restaurant_score'],
             'high_school_score': high_school_weight * new_dict[k]['high_school_score']
-            }
+        }
 
-        total_score = round(sum(scores.values()), 1)
-        recommandations[k] = [total_score] + list(scores.values())
+        quartiers_weighted_scores[k] = scores  # Mettre à jour les scores pondérés pour chaque quartier
 
-    sorted_recommandations = sorted(recommandations.items(), key=lambda x: x[1][0], reverse=True)
+        total_weight = (cafe_weight+car_weight+  walk_weight+  park_weight+  quiet_weight+  cycling_weight+  transit_weight+  vibrant_weight+  daycares_weight+  primary_weight+  shopping_weight+  groceries_weight+  nightlife_weight+  restaurant_weight+  high_school_weight)*10
+        total_score = round(sum(scores.values())+ 1)
+        recommandations[k] = [total_weight] + [total_score] + list(scores.values())
+
+    demo = demographics
+    colors = {90:"#69B34C",70:"#ACB334", 50: "#FAB733", 0:"#FF0D0D"}
+    sorted_recommandations = sorted(recommandations.items(), key=lambda x: x[1][1], reverse=True)
+    explanations = [generate_explanation(recommendation[0], quartiers_weighted_scores[recommendation[0]]) for recommendation in sorted_recommandations]  # Passer les scores pondérés spécifiques au quartier
+
+    for recommendation in sorted_recommandations:
+        print(quartiers_weighted_scores[recommendation[0]])  # Afficher les scores pondérés pour chaque quartier
+        print(recommendation[0])
+
     price_per_PQ = {row["NOM"]: row["Price_per_piece"] for index, row in Price_per_piece.iterrows()}
-    démo = {row["NOM"]: [row["Habitants"], row["Superficie (km2)"]] for index, row in superficie.iterrows()}
+    app.jinja_env.filters['zip_lists'] = zip_lists
+    zipped_data = []
+    for (quartier, scores), explanation in zip(sorted_recommandations, explanations):
+        zipped_data.append((quartier, scores, explanation))
 
-    return render_template('result.html', recommendations=sorted_recommandations,
-                               quartiers_images=quartiers_images, price_piece=price_per_PQ, démo=démo)
+    return render_template('result.html', zipped_data=zipped_data,
+                               quartiers_images=quartiers_images, price_piece=price_per_PQ, démo=demo, colors=colors )
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -109,7 +125,7 @@ def quartier():
     vibrant_weight = session.get('vibrant_weight', [])
     daycares_weight = session.get('daycares_weight', [])
     primary_weight = session.get('primary_weight', [])
-    shopping_weight = session.get('shopping_weight', [])               
+    shopping_weight = session.get('shopping_weight', [])
     groceries_weight = session.get('groceries_weight', [])
     nightlife_weight = session.get('nightlife_weight', [])
     restaurant_weight = session.get('restaurant_weight', [])
@@ -259,7 +275,7 @@ def quartier():
         icon_book = fl.Icon(icon=icon, prefix='fa', color="black", icon_color=color)
         fl.Marker(location=[lat, lon], popup=popup, icon=icon_book).add_to(map)
 
-    
+
     filter_type = request.args.get('type')
     min_price = get_request_arg_int(request, 'min_price')
     max_price = get_request_arg_int(request, 'max_price')
