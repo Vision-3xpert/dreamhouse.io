@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamhouse.io - Trouvez votre maison de rêve à Montréal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+
+
+    
+</head>
+<body>
+    <header>
+        <div style="padding: 50px;">
+            <h1 class="title">Dreamhouse.io</h1>
+        </div>
+    </header>
+    <div class="container" style="
+    width: 80%;
+    margin: auto;
+    height: 450px;
+    background: #304c89;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-around;
+">
+<div style="display:flex;margin: 30px;flex-direction: column;">
+    <h2 style="color:#e1e1e1; padding-bottom: 35px;">Trouvez votre maison de rêve à Montréal</h2>
+    <p class="txt" style="color:#e1e1e1;">
+        Dreamhouse.io est un service en ligne qui aide les particuliers à trouver un quartier à leur image et leur propriété de rêve à Montréal. Grâce à notre plateforme, vous pourrez découvrir des quartiers et des propriétés basés sur des données démographiques, de propriétés et géographiques. Notre objectif est de vous offrir une expérience personnalisée pour trouver la maison de vos rêves.
+    </p>
+    <p class="txt" style="color:#e1e1e1;">
+        Pour déterminer votre profil et trouver les meilleures options pour vous, nous allons vous poser une série de questions. Vous pouvez attribuer un score entre 0 et 3 pour chaque réponse (3 étant le plus élevé). Cela nous aidera à mieux comprendre vos préférences et à vous proposer des quartiers et des propriétés qui correspondent à vos critères.
+    </p>
+</div>
+                <img src="/static/images/Ville-Marie.jpg" alt="" style="width:80%; border-radius:50px;height:80%;">
+            </div>
+            <a href="{{ url_for('form') }}" class="btn" style="width:150px;margin: 30px auto;">Démarrer</a>
+
+</body>
+</html>

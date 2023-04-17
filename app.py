@@ -88,7 +88,7 @@ def save_weights():
         quartiers_weighted_scores[k] = scores  # Mettre à jour les scores pondérés pour chaque quartier
 
         total_weight = (cafe_weight+car_weight+  walk_weight+  park_weight+  quiet_weight+  cycling_weight+  transit_weight+  vibrant_weight+  daycares_weight+  primary_weight+  shopping_weight+  groceries_weight+  nightlife_weight+  restaurant_weight+  high_school_weight)*10
-        total_score = round(sum(scores.values())+ 1)
+        total_score = int(round(sum(scores.values()),0))
         recommandations[k] = [total_weight] + [total_score] + list(scores.values())
 
     demo = demographics
@@ -96,9 +96,7 @@ def save_weights():
     sorted_recommandations = sorted(recommandations.items(), key=lambda x: x[1][1], reverse=True)
     explanations = [generate_explanation(recommendation[0], quartiers_weighted_scores[recommendation[0]]) for recommendation in sorted_recommandations]  # Passer les scores pondérés spécifiques au quartier
 
-    for recommendation in sorted_recommandations:
-        print(quartiers_weighted_scores[recommendation[0]])  # Afficher les scores pondérés pour chaque quartier
-        print(recommendation[0])
+
 
     price_per_PQ = {row["NOM"]: row["Price_per_piece"] for index, row in Price_per_piece.iterrows()}
     app.jinja_env.filters['zip_lists'] = zip_lists
@@ -111,6 +109,9 @@ def save_weights():
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    return render_template('home.html')
+@app.route('/form', methods=['GET', 'POST'])
+def form():
     return render_template('form.html')
 
 @app.route('/quartier', methods=["POST", "GET"])
@@ -146,6 +147,7 @@ def quartier():
     min_bathrooms = get_request_arg_int(request, 'min_bathrooms')
     if min_bathrooms:
         filtered_house = filtered_house[filtered_house['baths'] >= min_bathrooms]
+    ## (ChatGPT, communication personnelle, en réponse à comment S'assurer que nous montrons toujours les 30 meilleures propriétés chaque fois que la page est chargée, 26 mars 2023).
     scores = filtered_house.apply(lambda row: (row["car_score"] * car_weight +
                                             row["cafe_score"] * cafe_weight +
                                             row["walk_score"] * walk_weight +
@@ -212,7 +214,6 @@ def quartier():
     q25 = np.percentile(scores, 25)  # 62.5
     q50 = np.percentile(scores, 50)  # 75.0
     q75 = np.percentile(scores, 75)  # 87.5
-    q100 = np.percentile(scores, 100)  # 100.0
 
 
 
@@ -234,41 +235,43 @@ def quartier():
         score = scores.loc[index]
 
         if score < q25:
-            color = "#ef476f"
+            color = "#FE1352"
         elif score < q50:
-            color = "#ffd166"
+            color = "#F67632"
         elif score < q75:
-            color = "#06d6a0"
+            color = "#FFFF5E"
         else:
-            color = "#fff"
+            color = "#04CB5A"
 
         html= f"""
         <article class="card" style =" width: 250px; height: 275px; border-radius: 25px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); overflow: hidden; margin: auto;">
-        <div class="thumb" style =" width: auto;height: 50%;"> <img src="{row["image"]}" style="width:100%; height:100%;" alt=""></div>
-        <div class="infos" style=" background: #fff; transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03); display: flex flex-direction: column;">
-        <div class="details" style="border-bottom: 0.5px solid #d9d9d9; padding: 14px 24px; ">
-            <h2 class="title" style=" margin: 5px 0; color: #6a6b6d;font-size: 0.8rem;">{row["titre"]}</h2>
-            <h3 class="price" style="   margin: 5px 0; font-size: 2rem; font-weight: 400; margin: 0px 0px; color: #4e958b; cursor: pointer;"> {row["price"]}</h3>
-            <h3 class="addresse" style="margin: 5px 0; font-size: 0.8rem; font-weight: 400; color: #4b4444;"> {row["Addresse"]}</h3>
-        </div>
-        <div class="pieces" style=" display: flex; justify-content: space-around;">
-        <div class="flexy" style="display: flex; align-items: center; justify-content: space-evenly;">
-        <svg class="icon" style= "width: 25px; height: 25px; padding-right: 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 16L3 5V1a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4l3 11v5a1 1 0 0 1-1 1v2h-1v-2H2v2H1v-2a1 1 0 0 1-1-1v-5zM19 5h1V1H4v4h1V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h2V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1zm0 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V6h-2v2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6H3.76L1.04 16h21.92L20.24 6H19zM1 17v4h22v-4H1zM6 4v4h4V4H6zm8 0v4h4V4h-4z"></path>
-        </svg>
-        <p><span class="">{row["beds"]}</span> Bedrooms</p>
+            <div class="thumb" style =" width: auto;height: 50%;"> <img src="{row["image"]}" style="width:100%; height:100%;" alt=""></div>
+            <div class="infos" style=" background: #fff; transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03); display: flex; flex-direction: column;">
+                <div class="details" style="display: grid;grid-template-columns: repeat(2 1fr);border-bottom: 0.5px solid #d9d9d9;padding: 14px 24px;align-items: center;grid-template-columns: 1fr 1fr;gap: 10px;justify-items: end;">
+                         <div>
+                    <h2 class="title" style=" margin: 5px 0; color: #6a6b6d;font-size: 0.8rem;">{row["titre"]}</h2>
+                    <h3 class="price" style="   margin: 5px 0; font-size: 2rem; font-weight: 400; margin: 0px 0px; color: #4e958b; cursor: pointer;"> {row["price"]}</h3>
+                    <h3 class="addresse" style="margin: 5px 0; font-size: 0.8rem; font-weight: 400; color: #4b4444;"> {row["Addresse"]}</h3>
+                </div>
+                <a href="{row['image']}" style="background: #e45;text-decoration: none;color: #fff;border-radius: 11px;padding: 10px;"> consulter</a>            </div>
+            <div class="pieces" style=" display: flex; justify-content: space-around;">
+            <div class="flexy" style="display: flex; align-items: center; justify-content: space-evenly;">
+            <svg class="icon" style= "width: 25px; height: 25px; padding-right: 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M0 16L3 5V1a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4l3 11v5a1 1 0 0 1-1 1v2h-1v-2H2v2H1v-2a1 1 0 0 1-1-1v-5zM19 5h1V1H4v4h1V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h2V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1zm0 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V6h-2v2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6H3.76L1.04 16h21.92L20.24 6H19zM1 17v4h22v-4H1zM6 4v4h4V4H6zm8 0v4h4V4h-4z"></path>
+            </svg>
+            <p><span class="">{row["beds"]}</span> Bedrooms</p>
 
-        </div>
-        <div class="flexy" style="display: flex; align-items: center; justify-content: space-evenly;">
-        <svg class="icon" style= "width: 25px; height: 25px; padding-right: 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M17.03 21H7.97a4 4 0 0 1-1.3-.22l-1.22 2.44-.9-.44 1.22-2.44a4 4 0 0 1-1.38-1.55L.5 11h7.56a4 4 0 0 1 1.78.42l2.32 1.16a4 4 0 0 0 1.78.42h9.56l-2.9 5.79a4 4 0 0 1-1.37 1.55l1.22 2.44-.9.44-1.22-2.44a4 4 0 0 1-1.3.22zM21 11h2.5a.5.5 0 1 1 0 1h-9.06a4.5 4.5 0 0 1-2-.48l-2.32-1.15A3.5 3.5 0 0 0 8.56 10H.5a.5.5 0 0 1 0-1h8.06c.7 0 1.38.16 2 .48l2.32 1.15a3.5 3.5 0 0 0 1.56.37H20V2a1 1 0 0 0-1.74-.67c.64.97.53 2.29-.32 3.14l-.35.36-3.54-3.54.35-.35a2.5 2.5 0 0 1 3.15-.32A2 2 0 0 1 21 2v9zm-5.48-9.65l2 2a1.5 1.5 0 0 0-2-2zm-10.23 17A3 3 0 0 0 7.97 20h9.06a3 3 0 0 0 2.68-1.66L21.88 14h-7.94a5 5 0 0 1-2.23-.53L9.4 12.32A3 3 0 0 0 8.06 12H2.12l3.17 6.34z"></path>
-        </svg>
-        <p><span class="">{row["baths"]}</span> Bathrooms</p>
-        </div>
+            </div>
+            <div class="flexy" style="display: flex; align-items: center; justify-content: space-evenly;">
+            <svg class="icon" style= "width: 25px; height: 25px; padding-right: 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M17.03 21H7.97a4 4 0 0 1-1.3-.22l-1.22 2.44-.9-.44 1.22-2.44a4 4 0 0 1-1.38-1.55L.5 11h7.56a4 4 0 0 1 1.78.42l2.32 1.16a4 4 0 0 0 1.78.42h9.56l-2.9 5.79a4 4 0 0 1-1.37 1.55l1.22 2.44-.9.44-1.22-2.44a4 4 0 0 1-1.3.22zM21 11h2.5a.5.5 0 1 1 0 1h-9.06a4.5 4.5 0 0 1-2-.48l-2.32-1.15A3.5 3.5 0 0 0 8.56 10H.5a.5.5 0 0 1 0-1h8.06c.7 0 1.38.16 2 .48l2.32 1.15a3.5 3.5 0 0 0 1.56.37H20V2a1 1 0 0 0-1.74-.67c.64.97.53 2.29-.32 3.14l-.35.36-3.54-3.54.35-.35a2.5 2.5 0 0 1 3.15-.32A2 2 0 0 1 21 2v9zm-5.48-9.65l2 2a1.5 1.5 0 0 0-2-2zm-10.23 17A3 3 0 0 0 7.97 20h9.06a3 3 0 0 0 2.68-1.66L21.88 14h-7.94a5 5 0 0 1-2.23-.53L9.4 12.32A3 3 0 0 0 8.06 12H2.12l3.17 6.34z"></path>
+            </svg>
+            <p><span class="">{row["baths"]}</span> Bathrooms</p>
+            </div>
 
-        </div>
-        </div>
-        </article>
+            </div>
+            </div>
+            </article>
         """
         lat, lon = row["Lat"], row["Lon"]
         popup = fl.Popup(html=html, max_width=500)
@@ -282,6 +285,8 @@ def quartier():
     min_bedrooms = get_request_arg_int(request, 'min_bedrooms')
     min_bathrooms = get_request_arg_int(request, 'min_bathrooms')
     for i in range(len(Montreal["features"])):
+        ##(ChatGPT, communication personnelle, en réponse à comment s'assurer de montrer seulement le qaurtier approprié baser sur le choix de l'utilisateur, 26 mars 2023).
+
         if Montreal["features"][i]['properties']['NOM'] == nom_quartier:
             layer = GeoJson(Montreal["features"][i], style_function=style_function)
             bounds = fl.GeoJson(Montreal["features"][i]).get_bounds()

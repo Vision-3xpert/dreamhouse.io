@@ -7,41 +7,47 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-	<h1 class="title">Bienvenue sur dreamhouse.io</h1>
+
+		<h1 class="title" style="padding: 30px 0 ;">Bienvenue sur dreamhouse.io</h1>
+		<div style="position:absolute; top:40px;right: 40px;">
+			<h3 class="title">Points restants : <span  class="title" id="pointsLeft">15</span></h3>
+		</div>
+
+
 	<form method="POST" action="{{ url_for('save_weights') }}">
 		<div class="grid">
 			<div>
 				<h2 class="title"> Mode de vie</h2>
 				<div class="box">
-					<label for="cafe">Quel poids apportez-vous aux cafés locaux?</label>
+					<label for="cafe">Quelle importance accordez-vous aux cafés locaux?</label>
 					<select id="cafe" name="cafe">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="shopping">Quel poids apportez-vous aux magasins dans les environs?</label>
+					<label for="shopping">Quelle importance accordez-vous aux magasins dans les environs?</label>
 					<select id="shopping" name="shopping">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="nightlife">Quel poids apportez-vous aux acitivités de nuit dans les environs?</label>
+					<label for="nightlife">Quelle importance accordez-vous aux acitivités de nuit dans les environs?</label>
 					<select id="nightlife" name="nightlife">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="restaurant">Quel poids apportez-vous aux restaurant dans les environs?</label>
+					<label for="restaurant">Quelle importance accordez-vous aux restaurant dans les environs?</label>
 					<select id="restaurant" name="restaurant">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="vibrant">Quel poids apportez-vous à la vibrance du quartier?</label>
+					<label for="vibrant">Quelle importance accordez-vous à la vie de quartier?</label>
 					<select id="vibrant" name="vibrant">
 						<option value="0">0</option>
 						<option value="1">1</option>
@@ -53,35 +59,35 @@
 			<div>
 				<h2 class="title">Accessibilité</h2>
 				<div class="box">
-					<label for="park">Quel poids apportez-vous aux parcs dans les environs?</label>
+					<label for="park">Quelle importance accordez-vous aux parcs dans les environs?</label>
 					<select id="park" name="park">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="car">Quel poids apportez-vous à l'accessibilité en véhicule?</label>
+					<label for="car">Quelle importance accordez-vous à l'accessibilité en véhicule?</label>
 					<select id="car" name="car">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="walk">Quel poids apportez-vous à l'accesisbilité à pied?</label>
+					<label for="walk">Quelle importance accordez-vous à l'accessibilité à pied?</label>
 					<select id="walk" name="walk">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="cycling">Quel poids apportez-vous à l'accès aux pistes cyclables dans les environs?</label>
+					<label for="cycling">Quelle importance accordez-vous à l'accès aux pistes cyclables?</label>
 					<select id="cycling" name="cycling">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="transit">Quel poids apportez-vous à l'accesisbilitéaux transports en commun?</label>
+					<label for="transit">Quelle importance accordez-vous à l'accessibilité aux transports en commun?</label>
 					<select id="transit" name="transit">
 						<option value="0">0</option>
 						<option value="1">1</option>
@@ -93,36 +99,36 @@
 			<div>
 				<h2 class="title">Vie Familiale</h2>
 				<div class="box">
-				
-					<label for="quiet">Quel poids apportez-vous au niveau de calme du quartier?</label>
+
+					<label for="quiet">Quelle importance accordez-vous au niveau de calme du quartier?</label>
 					<select id="quiet" name="quiet">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="groceries">Quel poids apportez-vous au nombre d'épicerie dans les environs?</label>
+					<label for="groceries">Quelle importance accordez-vous au nombre d'épicerie dans les environs?</label>
 					<select id="groceries" name="groceries">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="high_school">Quel poids apportez-vous aux écoles secondaire dans les environs?</label>
+					<label for="high_school">Quelle importance accordez-vous aux écoles secondaire dans les environs?</label>
 					<select id="high_school" name="high_school">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="daycares">Quel poids apportez-vous aux garderies dans les environs?</label>
+					<label for="daycares">Quelle importance accordez-vous aux garderies dans les environs?</label>
 					<select id="daycares" name="daycares">
 						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select><br>
-					<label for="primary">Quel poids apportez-vous aux écoles primaire dans les environs?</label>
+					<label for="primary">Quelle importance accordez-vous aux écoles primaire dans les environs?</label>
 					<select id="primary" name="primary">
 						<option value="0">0</option>
 						<option value="1">1</option>
@@ -135,6 +141,46 @@
 
 		<input type="submit" value="Envoyer">
 	</form>
+	<script>
+		// (ChatGPT, communication personnelle, en réponse à comment limiter le nombre de points attribuable dans un formulaire a 15 maximum et l'afficher en haut de page avec JS, 10 avril 2023).
+
+		const MAX_POINTS = 15;
+		let pointsLeft = MAX_POINTS;
+
+		// Obtenir tous les éléments de type 'select'
+		const selectElements = document.querySelectorAll('select');
+
+		// Mettre à jour le décompte de points restants
+		function updatePointsLeft() {
+			let totalPoints = 0;
+
+			selectElements.forEach((select) => {
+				totalPoints += parseInt(select.value);
+			});
+
+			pointsLeft = MAX_POINTS - totalPoints;
+			document.getElementById('pointsLeft').innerText = pointsLeft;
+		}
+
+		// Vérifier si le total des points ne dépasse pas le maximum autorisé
+		function checkPointsLimit(e) {
+			if (pointsLeft < 0) {
+				e.preventDefault();
+				alert('Vous avez dépassé la limite de 15 points. Veuillez ajuster vos sélections.');
+				updatePointsLeft();
+			}
+		}
+
+		// Ajouter des écouteurs d'événements pour chaque élément 'select'
+		selectElements.forEach((select) => {
+			select.addEventListener('change', updatePointsLeft);
+		});
+
+		// Ajouter un écouteur d'événement pour le formulaire
+		const form = document.querySelector('form');
+		form.addEventListener('submit', checkPointsLimit);
+
+	</script>
 
 </body>
 </html>

@@ -93,14 +93,17 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 opacity: 0;
 transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
 }
-article.card .infos .txt {
+.txt {
 line-height: 1.25;
 font-size: 0.75rem;
 color: #304c89;
-opacity: 0;
-transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
-font-weight: 400;
+font-weight: 600;
 }
+article.card .infos .txt {
+
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+  }
 
 article.card:hover .infos {
   transform: translateY(-330px);

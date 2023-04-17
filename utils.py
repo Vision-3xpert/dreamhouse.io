@@ -37,7 +37,7 @@ def generate_explanation(recommendation, scores):
     # Générer une phrase expliquant la recommandation
     explanation = []
 
-    for i, criterion in enumerate(top_criteria):      
+    for i, criterion in enumerate(top_criteria):
         if criterion[0] == 'car_score':
             explanation .append("Un accès facile en voiture et un stationnement abondant pour les résidents et les visiteurs.")
         elif criterion[0] == 'cafe_score':

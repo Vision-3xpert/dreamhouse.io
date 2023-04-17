@@ -27,7 +27,7 @@
               <h3 class="seats"><span class="bold">Superficie (km2):</span> {{ démo[quartier][0] }}  </h3>
               <h3 class="seats"><span class="bold">Prix moyen par pièces:</span> {{ price_piece[quartier] }}</h3>
               <h3 class="seats"><span class="bold">Groupe d'âge le plus populaire:</span> {{ démo[quartier][2] }}</h3>
-          
+
               <p class="txt">
 {% for i in explanation %}
 <span class="dot"></span>{{ i }}<br>
@@ -49,23 +49,25 @@
 
 </div>
 <script>
+	// (ChatGPT, communication personnelle, en réponse à comment montrer seulement 3 <articles> on page load et donner l'option de tous les montrées, 10 avril 2023).
+
   document.getElementById("showMoreBtn").addEventListener("click", function () {
     const recommendationsDiv = document.getElementById("recommendations");
     const currentLimit = parseInt(recommendationsDiv.getAttribute("data-limit"));
     const newLimit = recommendationsDiv.children.length; // Affiche toutes les recommandations
-  
+
     // Mettre à jour l'attribut data-limit
     recommendationsDiv.setAttribute("data-limit", newLimit);
-  
+
     // Afficher toutes les recommandations
     for (let i = 0; i < newLimit; i++) {
       recommendationsDiv.children[i].style.display = "block";
     }
-  
+
     // Masquer le bouton "Voir plus" après avoir affiché toutes les recommandations
     this.style.display = "none";
   });
   </script>
-  
+
   </body>
 </html>

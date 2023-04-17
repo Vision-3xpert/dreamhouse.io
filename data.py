@@ -77,7 +77,7 @@ def load_data():
         ville = row['NOM']
         demographics[ville] = [Superficie_km2,Habitants,max_age_group, Revenu]
 
-    test = houses.groupby("NOM").mean().round(2)
+    test = houses.groupby("NOM").mean(numeric_only=True).round(2)
     my_dict = {i: r[:0 - 2] for i, r in test.iterrows()}
     new_dict = {}
     for ville, scores in my_dict.items():
