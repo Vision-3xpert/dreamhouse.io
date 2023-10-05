@@ -253,7 +253,7 @@ def quartier():
                     <h3 class="price" style="   margin: 5px 0; font-size: 2rem; font-weight: 400; margin: 0px 0px; color: #4e958b; cursor: pointer;"> {row["price"]}</h3>
                     <h3 class="addresse" style="margin: 5px 0; font-size: 0.8rem; font-weight: 400; color: #4b4444;"> {row["Addresse"]}</h3>
                 </div>
-                <a href="{row['image']}" style="background: #e45;text-decoration: none;color: #fff;border-radius: 11px;padding: 10px;"> consulter</a>            </div>
+                <a href="{row['URL']}" target="_blank" style="background: #e45;text-decoration: none;color: #fff;border-radius: 11px;padding: 10px;"> consulter</a>            </div>
             <div class="pieces" style=" display: flex; justify-content: space-around;">
             <div class="flexy" style="display: flex; align-items: center; justify-content: space-evenly;">
             <svg class="icon" style= "width: 25px; height: 25px; padding-right: 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

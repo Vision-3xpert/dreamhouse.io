@@ -8,3 +8,4 @@ Features to be added:
    * show the score on 150 in the result page
    * Format the property marker and add the url link
    * format the interesting locations markers
+
